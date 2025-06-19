@@ -24,10 +24,11 @@
 
 <?jelly escape-by-default='false'?>
 <j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout">
-  <l:hasPermission permission="${app.ADMINISTER}">
+  <l:hasAdministerOrManage>
     <l:task icon="symbol-trash-outline plugin-ionicons-api" confirmationMessage="${%Purge the build queue?}"
             href="purge-build-queue/purge/" post="true" requiresConfirmation="true"
-            title="${%Purge Build Queue}" permissions="${it.ADMINISTER}">
+            destructive="true"
+            title="${%Purge Build Queue}">
     </l:task>
-  </l:hasPermission>
+  </l:hasAdministerOrManage>
 </j:jelly>
